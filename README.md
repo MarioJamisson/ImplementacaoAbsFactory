@@ -43,7 +43,7 @@ O código é composto pelas seguintes classes e interfaces:
     FabricaDeMoveis fabricaModerna = new FabricaDeMoveisModernos();
     mobiliarComodo(fabricaModerna);
     }
-4.## Exemplo de Execução
+4. ## Exemplo de Execução
 Quando o código é executado, a saída será:
 ```java
 Sentando em uma cadeira clássica de madeira entalhada.
