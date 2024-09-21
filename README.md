@@ -1,18 +1,55 @@
-## Getting Started
+# Exemplo de Padrão Abstract Factory
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é um exemplo de aplicação do padrão de design **Abstract Factory** em Java. O padrão Abstract Factory fornece uma interface para criar famílias de objetos relacionados sem especificar suas classes concretas. Neste exemplo, o padrão é utilizado para criar móveis clássicos e modernos.
 
-## Folder Structure
+## Estrutura do Código
 
-The workspace contains two folders by default, where:
+O código é composto pelas seguintes classes e interfaces:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. **Cadeira**, **Sofa**, **Mesa**: Classes abstratas que representam diferentes tipos de móveis. Cada classe define um método para interagir com o móvel.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. **CadeiraClassica**, **SofaClassico**, **MesaClassica**: Implementações clássicas dos móveis que representam o estilo clássico.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+3. **CadeiraModerna**, **SofaModerno**, **MesaModerna**: Implementações modernas dos móveis que representam o estilo moderno.
 
-## Dependency Management
+4. **FabricaDeMoveis**: Interface abstrata para criar móveis. Define métodos para criar uma cadeira, um sofá e uma mesa.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+5. **FabricaDeMoveisClassicos**: Implementa a fábrica de móveis clássicos. Cria instâncias das implementações clássicas de móveis.
+
+6. **FabricaDeMoveisModernos**: Implementa a fábrica de móveis modernos. Cria instâncias das implementações modernas de móveis.
+
+7. **Main**: Classe principal que demonstra a utilização do padrão Abstract Factory. Cria diferentes fábricas de móveis e utiliza uma função para mobiliar o cômodo com base na fábrica fornecida.
+
+## Como Utilizar
+
+1. **Crie uma fábrica de móveis**:
+   ```java
+   FabricaDeMoveis fabricaClassica = new FabricaDeMoveisClassicos();
+   
+2. **Utilize a fábrica para mobiliar o cômodo:**
+   ```java
+   mobiliarComodo(fabricaClassica);
+  Substitua fabricaClassica por fabricaModerna para utilizar a fábrica de móveis modernos:
+   ```java
+   FabricaDeMoveis fabricaModerna = new FabricaDeMoveisModernos();
+   mobiliarComodo(fabricaModerna);
+```
+3. ## Executar programa
+   ```java
+   public static void main(String[] args) {
+    FabricaDeMoveis fabricaClassica = new FabricaDeMoveisClassicos();
+    mobiliarComodo(fabricaClassica);
+
+    FabricaDeMoveis fabricaModerna = new FabricaDeMoveisModernos();
+    mobiliarComodo(fabricaModerna);
+    }
+4.## Exemplo de Execução
+Quando o código é executado, a saída será:
+```java
+Sentando em uma cadeira clássica de madeira entalhada.
+Relaxando em um sofá clássico com estofado de veludo.
+Usando uma mesa clássica de mogno.
+Sentando em uma cadeira moderna de metal e couro.
+Relaxando em um sofá moderno com design minimalista.
+Usando uma mesa moderna de vidro.
+
